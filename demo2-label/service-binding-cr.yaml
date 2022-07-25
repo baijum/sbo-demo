@@ -1,0 +1,15 @@
+apiVersion: servicebinding.io/v1alpha3
+kind: ServiceBinding
+metadata:
+  name: sb
+spec:
+  workload:
+    apiVersion: apps/v1
+    kind: Deployment
+    selector:
+      matchLabels:
+        environment: test
+  service:
+    apiVersion: app.example.org/v1alpha1
+    kind: BackingService
+    name: back1
